@@ -17,19 +17,72 @@
         <div>
             <p>Wellcome</p><span><!--ここspanで本当にいいのか要確認！--></span>
         </div>
-        <div><img src="./assets/logo/sitelogo.png" alt=""></div>
+        <div><a href="./index.html"><img src="./assets/logo/sitelogo.png" alt=""></a></div>
         <div class="header-menu">
             <ul>
-                <li><a href=""><img src="./assets/logo/header_nav_icon_member.png" alt=""><p>Member</p></a></li>
-                <li><a href=""><img src="./assets/logo/header_nav_icon_favorite.png" alt=""><p>Favorite</p></a></li>
-                <li><a href=""><img src="./assets/logo/header_nav_icon_cart.png" alt=""><p>Cart</p></a></li>
+                <li><a href=""><img src="./assets/logo/header_nav_icon_member.png" alt="">
+                        <p>Member</p>
+                    </a></li>
+                <li><a href=""><img src="./assets/logo/header_nav_icon_favorite.png" alt="">
+                        <p>Favorite</p>
+                    </a></li>
+                <li id="cartIcon"><a href="#"><img src="./assets/logo/header_nav_icon_cart.png" alt="">
+                        <p>Cart</p>
+                    </a></li>
             </ul>
+            <div class="cart-menu hidden">
+                <div id="cart-items"></div>
+                <div style="margin: 10% 0;"><a id="checkout-btn" href="./cart.html">Proceed to Checkout</a></div>
+                <div id="close-btn">
+                    <p>✖Close</p>
+                </div>
+            </div>
+        </div>
         </div>
     </header>
     <hr>
     <main class="container">
+        <section class="main-product">
+            <section>
+                <div id="product-image"></div>
+                <div id="desc">
+                    <h2>Item description</h2>
+                </div>
+
+            </section>
+            <section>
+                <div id="product-info"></div>
+                <div id="stock" style="border-bottom: 1px solid;">
+                </div>
+            </section>
+        </section>
+        <section id="review-sec">
+            <h1>Review for this Item</h1>
+            <section id="otherUser-review"></section>
+            <section id="your-review">
+                <form id="review-form">
+                    <div id="star-rating">
+                        <span data-rating="1">★</span>
+                        <span data-rating="2">★</span>
+                        <span data-rating="3">★</span>
+                        <span data-rating="4">★</span>
+                        <span data-rating="5">★</span>
+                    </div>
+                    <input type="hidden" id="review-rating" value="0">
+                    <div>
+                        <label for="review-title">Title</label>
+                        <input type="text" id="review-title">
+                    </div>
+                    <div>
+                        <label for="review-comment">Review</label>
+                        <textarea id="review-comment" placeholder="Your review"></textarea>
+                    </div>
+                </form>
+                <button id="submit-reviewBtn">Submit the Review</button>
+            </section>
+        </section>
         <section>
-            <div></div>
+
         </section>
     </main>
     <footer>
@@ -128,7 +181,7 @@
                 </div>
             </section>
             <section class="important-info"><!--要修正！ほかの横並びと同じclass名つけるのも手だね-->
-                <div><img src="./assets/logo/sitelogo.png" alt=""></div>
+                <div><a href="./index.html"><img src="./assets/logo/sitelogo.png" alt=""></a></div>
                 <div>
                     <ul>
                         <li><a href="">
@@ -151,9 +204,11 @@
             </section>
         </div>
         <section class="copyright">
-                <p>Copyright (C) Bleu Bleuet. All Rights Reserved.</p>
+            <p>Copyright (C) Bleu Bleuet. All Rights Reserved.</p>
         </section>
     </footer>
+    <script src="./product.js"></script>
+    <script src="./common.js"></script>
 </body>
 
 </html>

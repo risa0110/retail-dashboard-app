@@ -12,6 +12,7 @@
     --background-color-light: #eff2f4;
     --background-color-white: #fff;
     --background-dark: #1c406a;
+    --btn-color: #fa7283;
 }
 /*font setting*/
 h1, h2, h3, h4, p, a{
@@ -50,9 +51,37 @@ header{
 .header-menu li img {
     margin: 0 1rem 0 2rem;
 }
+/*cart-menu style*/
+.cart-menu{
+    text-align: center;
+    position: fixed;
+    padding: 1%;
+    right: 0;
+    top: 18%;
+    width: 30%;
+    background-color: var(--background-color-white);
+    border: 5px solid #e9eff7;
+}
+.cart-menu.hidden{
+    display: none;
+}
+.cart-menu img{
+    width: 25%;
+    aspect-ratio: 1/1.1;
+}
+.each-item{
+    display: flex;
+    margin: 3%;
+}
+#checkout-btn{
+    background-color: var(--btn-color);
+    color: var(--background-color-white);
+    padding: 2%;
+    border-radius: 4%;
+}
 
 /*main style*/
-main{
+.main-section{
     display: grid;
     grid-template-columns: 1fr 4fr;
     gap: 2rem;
@@ -65,6 +94,7 @@ main{
 h2{
     margin-top: 3vh;
 }
+
 .product-section h1{
     text-align: center;
     margin: 4rem 0;
@@ -83,8 +113,92 @@ h2{
 }
 /*gallery*/
 .img-gallery{
+    margin: 10% 0 25%;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 5%;
+}
+.img-gallery img{
+    width: 100%;
+}
+
+/*go to page-top*/
+.top-page{
+    position: fixed;
+    bottom: 3%;
+    right: 0;
+}
+.top-page img{
+    width: 60%;
+}
+
+/*product-page style*/
+.main-product{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3%;
+}
+#desc h2{
+    margin: 50px 0 20px;
+    text-align: center;
+}
+/*review section style*/
+#review-sec{
+    margin: 50px 0;
+    text-align: center;
+}
+#star-rating span{
+    font-size: 30px;
+    cursor: pointer;
+    color: lightgray;
+}
+#star-rating .selected{
+    color: gold;
+}
+
+/*cart-page style*/
+#orrder-completed.hidden{
+    display: none;
+}
+#orrder-completed{
+    background-color: var(--background-color-white);
+    height: 80vh;
+    width: 80vw;
+    position: fixed;
+    top: 15%;
+    left: 10%;
+    border: var(--text-color) solid 3px;
+    border-radius: 10px;
+}
+#orrder-completed div{
+    display: grid;
+    gap: 50px;
+    height: 100%;
+    text-align: center;
+    align-content: center;
+}
+#buy-btn{
+    width: 90vw;
+    height: 40px;
+    background-color: var(--btn-color);
+    color: var(--background-color-white);
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 50px;
+}
+#cal{
+    background-color: var(--background-color-white);
+    padding: 10px;
+    margin: 20px 0;
+    border-radius: 5px;
+}
+.back-to-top{
+    justify-self: center;
+    width: max-content;
+    background-color: var(--btn-color);
+    color: var(--background-color-white);
+    padding: 10px 20px;
+    border-radius: 5px;
 }
 /*footer*/
 footer{

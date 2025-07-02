@@ -14,79 +14,24 @@
 
 <body>
     <header class="container">
-        <div>
-            <p>Wellcome</p>
-            <div class="user-name"><!--ここspanで本当にいいのか要確認！--></div>
-        </div>
-        <div><a href="#"><img src="./assets/logo/sitelogo.png" alt=""></a></div>
-        <div class="header-menu">
-            <ul>
-                <li><a href=""><img src="./assets/logo/header_nav_icon_member.png" alt="">
-                        <p>Member</p>
-                    </a></li>
-                <li><a href=""><img src="./assets/logo/header_nav_icon_favorite.png" alt="">
-                        <p>Favorite</p>
-                    </a></li>
-                <li id="cartIcon"><a href="#"><img src="./assets/logo/header_nav_icon_cart.png" alt="">
-                        <p>Cart</p></a>
-                </li>
-            </ul>
-        </div>
-        <div class="cart-menu hidden">
-                <div id="cart-items"></div>
-                <div style="margin: 10% 0;"><a id="checkout-btn" href="./cart.html">Proceed to Checkout</a></div>
-                <div id="close-btn">
-                    <p>✖Close</p>
-                </div>
-            </div>
+        <div><a href="./index.html"><img src="./assets/logo/sitelogo.png" alt=""></a></div>
     </header>
     <hr>
     <main class="container">
-        <section class="main-section">
-            <section class="filter-section">
-                <h2>Filter Products</h2>
-            </section>
-            <section class="product-section">
-                <h1>All Household Goods & Plush Toys</h1>
-                <div>
-                    <ul>
-                        <li>
-                            <p><strong>Sort by：</strong></p>
-                        </li>
-                        <li>
-                            <p>Newest</p>
-                        </li>
-                        <li>
-                            <p>Recommended</p>
-                        </li>
-                        <li>
-                            <p>Price - Low to High</p>
-                        </li>
-                        <li>
-                            <p>Price - High to Low</p>
-                        </li>
-                    </ul>
-                </div>
-                <!-- <div class="page-nav">
-                    <p>Show All <span></span>Items</p>
-                    <div>
-                        <div class="prev-button"><button></button></div>
-                        <div class="nav-page"></div>
-                        <div class="nav-page"></div>
-                        <div class="nav-page"></div>
-                        <div class="nav-page"></div>
-                        <div class="nav-page"></div>
-                        <div class="next-button"><button></button></div>
-                    </div>
-                </div> -->
-                <section class="img-gallery">
-
-                </section>
-            </section>
-            <div class="top-page">
-                <img src="./assets/logo/pagetop.png" alt="">
+        <section id="orrder-completed" class="hidden">
+            <div>
+                <h1>Thank you for your order!!</h1>
+                <a href="./index.html" class="back-to-top">Back to Home page</a>
             </div>
         </section>
+        <section id="orrder">
+            <div style="display: flex; margin: 40px 0;"><h2>Order subtotal:</h2><div id="total"></div></div>
+            <div style="text-align: center;"><button id="buy-btn">Buy</button></div>
+        </section>
+        <section id="cart-items">
+            <!--ここでproduct.jsでlocalStorageに保存した商品を表示したい-->
+        </section>
+        <button id="cal">Calculate</button>
     </main>
     <footer>
         <div class="container">
@@ -184,7 +129,7 @@
                 </div>
             </section>
             <section class="important-info"><!--要修正！ほかの横並びと同じclass名つけるのも手だね-->
-                <div><a href="#"><img src="./assets/logo/sitelogo.png" alt=""></a></div>
+                <div><a href="./index.html"><img src="./assets/logo/sitelogo.png" alt=""></a></div>
                 <div>
                     <ul>
                         <li><a href="">
@@ -210,8 +155,7 @@
             <p>Copyright (C) Bleu Bleuet. All Rights Reserved.</p>
         </section>
     </footer>
-    <script src="./main.js"></script>
-    <script src="./common.js"></script>
+    <script src="./checkout.js"></script>
 </body>
 
 </html>
