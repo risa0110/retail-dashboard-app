@@ -1,6 +1,6 @@
 const cartI = JSON.parse(localStorage.getItem('cartI'));
 
-//remove items(理解がまだ足りてないので再確認！)
+//remove items
 function removeFromCart(productIdToRemove){
     const updatedCart = cartI.filter(item => item.productId !== productIdToRemove);
     //keep only the items which item.productId & productIdToRemove isn't correct
@@ -10,7 +10,7 @@ function removeFromCart(productIdToRemove){
         itemElement.remove();
     }
   }
-//re-save the data(ここ理解しきれてないからな？？)
+//re-save the data
 function recalTotal (){
   let Total = 0;
   quantityInputs.forEach(({InputEl, productId})=>{
@@ -34,7 +34,7 @@ function recalTotal (){
   subToatal.style.marginLeft="10px";
   subToatal.style.color="red";
 };
-//ここもたぶん変な修正の仕方してるから変なところいっぱいあるかも....
+
 fetch('https://risa0110.github.io/retail-dashboard-app-server/data/product.json')
   .then(response => response.json ())
   .then(products => {
@@ -79,7 +79,7 @@ fetch('https://risa0110.github.io/retail-dashboard-app-server/data/product.json'
             const del = document.createElement("button");
             del.textContent = "delete";
             del.addEventListener("click", () => {
-                removeFromCart(matchedProduct.id);//ここ仮置きだから！これだけじゃ機能しないよー
+                removeFromCart(matchedProduct.id);
             })
             del.style.border="none";
             del.style.backgroundColor="#fff";
@@ -103,7 +103,6 @@ fetch('https://risa0110.github.io/retail-dashboard-app-server/data/product.json'
         }
     });
     recalTotal();
-    console.log(cartI)//←後で消せ。確認用
   })
   .catch(error => {
     console.error("We couldn't get the products error:", error);
