@@ -147,6 +147,11 @@ h2{
     margin: 50px 0;
     text-align: center;
 }
+#otherUser-review{
+    margin: 50px 0;
+    padding: 20px 0;
+    background-color: var(--background-color-light);
+}
 #star-rating span{
     font-size: 30px;
     cursor: pointer;
@@ -200,10 +205,18 @@ h2{
     padding: 10px 20px;
     border-radius: 5px;
 }
+
+/*dashboard-page style*/
+canvas{
+    margin: 10% 0;
+}
 /*footer*/
 footer{
     background-color: #eff2f4;
     padding-top: 5rem;
+}
+footer .container{
+    display: grid;
 }
 .sns{
     width: max-content;

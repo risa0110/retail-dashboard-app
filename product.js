@@ -23,13 +23,27 @@ stars.forEach(star => {
 });
 
 //function for posting the reviews in JSON file
+// ★ 1件ずつのレビューを表示
 function displayReview(review) {
     const container = document.getElementById("otherUser-review");
+
     const reviewEl = document.createElement("div");
     reviewEl.className = "review-item";
+    reviewEl.style.margin = "20px 0";
+    reviewEl.style.padding = "20px 30px";
+    reviewEl.style.backgroundColor = "#fff";
+    reviewEl.style.justifySelf = "center";
+    reviewEl.style.alignContent = "center";
+    reviewEl.style.width = "1000px";
+
+    const containerReview = document.createElement("div");
+    containerReview.style.margin = "10px 0";
 
     const stars = document.createElement("span");
     stars.textContent = "★".repeat(review.rating) + "☆".repeat(5 - review.rating);
+    stars.style.fontSize = "15px";
+    stars.style.color = "gold";
+    stars.style.margin = "0 5px";
 
     const title = document.createElement("strong");
     title.textContent = review.Title;
@@ -37,19 +51,53 @@ function displayReview(review) {
     const comment = document.createElement("p");
     comment.textContent = review.Comment;
 
-    reviewEl.appendChild(stars);
-    reviewEl.appendChild(title);
+    containerReview.appendChild(stars);
+    containerReview.appendChild(title);
+    reviewEl.appendChild(containerReview);
     reviewEl.appendChild(comment);
 
-    container.prepend(reviewEl);
+    container.appendChild(reviewEl);
 }
+
+// ★ 全レビューの平均を表示＋一覧を出す
+function displayAllReviews(reviews) {
+    const container = document.getElementById("otherUser-review");
+    container.innerHTML = "";
+
+    if (reviews.length === 0) {
+        container.textContent = "No reviews yet.";
+        return;
+    }
+
+    const totalRating = reviews.reduce((sum, r) => sum + r.rating, 0);
+    const avgRating = (totalRating / reviews.length).toFixed(1);
+
+    const avgEl = document.createElement("div");
+    avgEl.innerHTML = `Average Rating <span style="color: gold;">${"★".repeat(Math.round(avgRating))}${"☆".repeat(5 - Math.round(avgRating))}</span> (${avgRating})`;
+    avgEl.style.fontSize = "18px";
+    avgEl.style.fontWeight = "bold";
+    avgEl.style.margin = "50px 0 70px";
+
+    container.appendChild(avgEl);
+
+    reviews.forEach(displayReview);
+}
+
+
 
 document.addEventListener("DOMContentLoaded",()=>{
     fetch("http://localhost:3000/review")
     .then(res => res.json())
     .then(allReviews => {
         const relatedReviews = allReviews.filter(r => r.productId === productId);
-        relatedReviews.forEach(displayReview);
+        displayAllReviews(relatedReviews);
+
+        //calculate overall score of the products
+        let overall = 0;
+        relatedReviews.forEach(r=> {
+            overall += r.rating;
+        })
+        console.log(overall);
     })
     .catch(er=>{
         console.error("We couldn't recieve the data", er);

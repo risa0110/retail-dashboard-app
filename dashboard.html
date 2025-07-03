@@ -41,49 +41,9 @@
         </div>
     </header>
     <hr>
-    <main>
-        <section class="main-product container">
-            <section>
-                <div id="product-image"></div>
-                <div id="desc">
-                    <h2>Item description</h2>
-                </div>
-
-            </section>
-            <section>
-                <div id="product-info"></div>
-                <div id="stock" style="border-bottom: 1px solid;">
-                </div>
-            </section>
-        </section>
-        <section id="review-sec">
-            <h1>Review for this Item</h1>
-            <section id="otherUser-review"></section>
-            <section id="your-review">
-                <form id="review-form">
-                    <div id="star-rating">
-                        <span data-rating="1">★</span>
-                        <span data-rating="2">★</span>
-                        <span data-rating="3">★</span>
-                        <span data-rating="4">★</span>
-                        <span data-rating="5">★</span>
-                    </div>
-                    <input type="hidden" id="review-rating" value="0">
-                    <div>
-                        <label for="review-title">Title</label>
-                        <input type="text" id="review-title">
-                    </div>
-                    <div>
-                        <label for="review-comment">Review</label>
-                        <textarea id="review-comment" placeholder="Your review"></textarea>
-                    </div>
-                </form>
-                <button id="submit-reviewBtn">Submit the Review</button>
-            </section>
-        </section>
-        <section>
-
-        </section>
+    <main class="container">
+         <canvas id="dashborad-chart" width="400" height="200"></canvas>
+         <canvas id="keyword-chart" width="400" height="150"></canvas>
     </main>
     <footer>
         <div class="container">
@@ -207,8 +167,9 @@
             <p>Copyright (C) Bleu Bleuet. All Rights Reserved.</p>
         </section>
     </footer>
-    <script src="./product.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="./common.js"></script>
+    <script src="./dashboard.js"></script>
 </body>
 
 </html>

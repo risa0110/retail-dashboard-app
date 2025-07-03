@@ -21,16 +21,18 @@ This is an application which you can manage an inventory of products, browse ite
 This project was inspired by the existing retail web-site of [Bleu Bleuet](https://www.bleubleuet.jp/shop/default.aspx). 
 
 ## Folder Structure  
-/index.html # Main page for product gallery  
-/main.js # js for the main page(index.html)  
-/product.html # page which shows you the detail for each items  
-/product.js # js for the product.html  
-/cart.html # page for puchasing the products    
-/checkout.js  # js for the cart.html  
-/common.js # js for the few common function like header section    
-/style.css  # styling for the UI    
+/index.html / Main page for product gallery  
+/main.js / js for the main page(index.html)  
+/product.html / page which shows you the detail for each items  
+/product.js / js for the product.html  
+/cart.html / page for puchasing the products    
+/checkout.js  / js for the cart.html  
+/common.js / js for the few common function like header section  
+/dashboard.html / show the available items, sold quantity, average of the review score    
+/dashboard.js / js for the dashboard page   
+/style.css  / styling for the UI    
 /README.md  
-/assets  # Stores the site logo
+/assets  / Stores the site logo
   
 ## Getting Started    
 ### Prerequisites  
